@@ -11,7 +11,7 @@ export default async function ServerPage() {
 
   return (
     <>
-      <h1>You are logged in. This is he server page.</h1>
+      <h1>You are logged in. This is the server page.</h1>
       {/* This is your guide to the server page. */}
       {/* <ComponentName user={session?.user} pagetype={"Server"} /> */}
     </>
