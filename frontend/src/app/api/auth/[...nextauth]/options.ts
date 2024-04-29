@@ -22,6 +22,7 @@ export const options: NextAuthOptions = {
         // pull user data from database
 
         // This is test only
+        // Replace this with actual data pull from DATABASE
         const user = { id: 1, name: "Test User", password: "123456" };
 
         if (
