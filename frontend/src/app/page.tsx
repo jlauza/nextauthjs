@@ -1,14 +1,18 @@
+import React from "react";
 import { options } from "./api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth/next";
+import { Center, Box, Button } from "@mantine/core";
+import UserCard from "./user-info/UserCard";
 
 export default async function Home() {
   const session = await getServerSession(options);
+
   return (
     <>
       {session ? (
         <>
-          {/* <UserCard user={session?.user} pagetype={"Dashboard"} /> */}
-          <h1>Hi {session.user?.name}, you are logged in</h1>
+          <UserCard pagetype={"Dashboard"} />
+          {/* <h1>Hi {session.user?.name}, you are logged in</h1>
           <ul>
             <img
               src={session.user?.image as string}
@@ -20,12 +24,16 @@ export default async function Home() {
             <li>{session.user?.name}</li>
             <li>{session.user?.email}</li>
           </ul>
-          <a href="/api/auth/signout">Sign out</a>
+          <a href="/api/auth/signout">Sign out</a> */}
         </>
       ) : (
         <>
-          <h1>Not logged in</h1>
-          <a href="/api/auth/signin">Sign in</a>
+          <Center maw={400} h={100} bg="var(--mantine-color-gray-light)">
+            <Box bg="var(--mantine-color-blue-light)">
+              <h1>Welcome back! Please login.</h1>
+              <a href="/api/auth/signin">Sign In</a>
+            </Box>
+          </Center>
         </>
       )}
     </>

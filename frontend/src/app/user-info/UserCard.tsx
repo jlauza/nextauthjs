@@ -1,12 +1,15 @@
 import React from "react";
 import { options } from "../api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth/next";
+import { Button } from "@mantine/core";
+import { redirect } from "next/navigation";
+import Link from "next/link";
 
 export default async function UserCard() {
   const session = await getServerSession(options);
+
   return (
     <>
-      {/* <UserCard user={session?.user} pagetype={"Dashboard"} /> */}
       <h1>Hi {session.user?.name}, you are logged in</h1>
       <ul>
         <img
@@ -19,7 +22,10 @@ export default async function UserCard() {
         <li>{session.user?.name}</li>
         <li>{session.user?.email}</li>
       </ul>
-      <a href="/api/auth/signout">Sign out</a>
+      {/* <a href="/api/auth/signout">Sign out</a> */}
+      <Link href="/api/auth/signout">
+        <Button variant="filled">Sign Out</Button>
+      </Link>
     </>
   );
 }
