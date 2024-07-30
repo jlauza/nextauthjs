@@ -2,7 +2,6 @@ import React from "react";
 import { options } from "../api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth/next";
 import { Button } from "@mantine/core";
-import { redirect } from "next/navigation";
 import Link from "next/link";
 
 export default async function UserCard() {
