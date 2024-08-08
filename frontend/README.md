@@ -2,9 +2,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, change node version if using lower than v18, Then run the development server:
 
 ```bash
+nvm use 18
+
 npm run dev
 # or
 yarn dev
