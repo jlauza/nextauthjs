@@ -24,7 +24,7 @@ services:
     environment:
       - NODE_ENV=production
 
-  db:
+  db_nextauth:
     image: mongo
     container_name: db
     ports:
