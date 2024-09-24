@@ -1,28 +1,28 @@
 version: "3.8"
 
 services:
-  frontend:
-    container_name: frontend
-    build:
-      context: ./frontend
-    restart: always
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend_dir
-    environment:
-      - NODE_ENV=production
+  # frontend:
+  #   container_name: frontend
+  #   build:
+  #     context: ./frontend
+  #   restart: always
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - backend_dir
+  #   environment:
+  #     - NODE_ENV=production
 
-  backend_dir:
-    container_name: backend
-    build: ./backend_dir
-    restart: always
-    ports:
-      - "8080:8080"
-    depends_on:
-      - db
-    environment:
-      - NODE_ENV=production
+  # backend_dir:
+  #   container_name: backend
+  #   build: ./backend_dir
+  #   restart: always
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - db_nextauth
+  #   environment:
+  #     - NODE_ENV=production
 
   db_nextauth:
     image: mongo
