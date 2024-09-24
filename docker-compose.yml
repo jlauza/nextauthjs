@@ -26,7 +26,7 @@ services:
 
   db_nextauth:
     image: mongo
-    container_name: db
+    container_name: db_nextauth
     ports:
       - "27017:27017"
     volumes:
